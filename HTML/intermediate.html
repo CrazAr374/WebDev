@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information about the page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate HTML Tags</title>
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <article> defines independent, self-contained content -->
+    <article>
+        <header>
+            <!-- <header> contains introductory content or navigational links -->
+            <h1>Understanding Intermediate HTML Tags</h1>
+            <p>Learn more about intermediate tags and how to use them effectively in your HTML projects.</p>
+        </header>
+
+        <!-- <aside> defines content aside from the main content -->
+        <aside>
+            <h3>Quick Tips</h3>
+            <p>Check out the sidebar for extra info or tips!</p>
+        </aside>
+
+        <!-- <section> defines sections in a document -->
+        <section id="forms">
+            <h2>Forms in HTML</h2>
+            <!-- <form> element defines a form that is used to collect user input -->
+            <form action="/submit" method="post">
+                <!-- <label> defines a label for an input element -->
+                <label for="username">Username:</label>
+                <!-- <input> is used to create an input field -->
+                <input type="text" id="username" name="username" required><br>
+
+                <!-- <textarea> is for multi-line text input -->
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br>
+
+                <!-- <select> creates a drop-down list -->
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="user">User</option>
+                </select><br>
+
+                <!-- <input type="radio"> creates a radio button -->
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+
+                <!-- <input type="checkbox"> creates a checkbox -->
+                <label for="newsletter">Subscribe to newsletter:</label>
+                <input type="checkbox" id="newsletter" name="newsletter" checked><br>
+
+                <!-- <button> defines a clickable button -->
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="media">
+            <h2>Working with Media Elements</h2>
+
+            <!-- The <audio> element is used to embed sound content -->
+            <h3>Audio Example</h3>
+            <audio controls>
+                <source src="audio-file.mp3" type="audio/mpeg">
+                <!-- Fallback text for browsers that don't support the <audio> tag -->
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- The <iframe> tag is used to embed another document within the current HTML document -->
+            <h3>Embedding External Content (Iframe)</h3>
+            <iframe src="https://www.example.com" width="300" height="200" style="border:1px solid black;">
+                <!-- The <iframe> element contains a fallback message if the iframe cannot be loaded -->
+                Your browser does not support iframes.
+            </iframe>
+        </section>
+
+        <section id="tables">
+            <h2>Advanced Table Structures</h2>
+            <!-- <table> defines a table -->
+            <table border="1">
+                <!-- <caption> provides a title or caption for the table -->
+                <caption>Employee Information</caption>
+
+                <!-- <thead> groups the header content in a table -->
+                <thead>
+                    <tr>
+                        <!-- <th> defines a header cell in a table -->
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <!-- <tbody> groups the body content in a table -->
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Developer</td>
+                        <td>IT</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Designer</td>
+                        <td>Creative</td>
+                    </tr>
+                </tbody>
+                <!-- <tfoot> groups the footer content in a table -->
+                <tfoot>
+                    <tr>
+                        <td colspan="3">End of Employee Data</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="layout">
+            <h2>Layout Tags</h2>
+            <!-- <div> is a container used to group content together -->
+            <div style="border: 1px solid blue; padding: 10px;">
+                <h3>Div Example</h3>
+                <p>This is a <strong>div</strong> container. It's often used to group elements for styling and layout.</p>
+            </div>
+
+            <!-- <span> is an inline container used to group inline elements -->
+            <p>This is a <span style="color: red;">span element</span> used to style a part of the text.</p>
+
+            <!-- <details> creates a collapsible element -->
+            <details>
+                <summary>Click to see more info</summary>
+                <p>This is additional information that can be shown or hidden by the user.</p>
+            </details>
+
+            <!-- <dialog> creates a dialog box that can be opened and closed -->
+            <dialog id="myDialog">
+                <p>This is a dialog box. It can be used for pop-up messages or interactions.</p>
+                <button onclick="document.getElementById('myDialog').close()">Close</button>
+            </dialog>
+            <button onclick="document.getElementById('myDialog').showModal()">Open Dialog</button>
+        </section>
+
+        <!-- <footer> represents the footer of the document or a section -->
+        <footer>
+            <p>&copy; 2024 Intermediate HTML Tags</p>
+        </footer>
+    </article>
+
+    <!-- Inline script for dialog box functionality -->
+    <script>
+        // JavaScript to handle the dialog interaction
+        document.querySelector('dialog').addEventListener('close', () => {
+            console.log('Dialog closed');
+        });
+    </script>
+</body>
+</html>

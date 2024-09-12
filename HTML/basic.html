@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The <meta> tag defines metadata about the HTML document -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The <title> tag specifies the title of the document, which appears in the browser tab -->
+    <title>Basic HTML Tags</title>
+    <!-- The <link> tag is used to link external resources like stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- The <header> tag represents the header section of the document -->
+    <header>
+        <h1>Welcome to Basic HTML Tags</h1>
+        <!-- The <nav> tag defines a set of navigation links -->
+        <nav>
+            <a href="#section1">Section 1</a> |
+            <a href="#section2">Section 2</a>
+        </nav>
+    </header>
+
+    <!-- The <section> tag defines a section in the document -->
+    <section id="section1">
+        <!-- The <h2> tag represents a subheading -->
+        <h2>Section 1: Text Elements</h2>
+        <!-- The <p> tag defines a paragraph -->
+        <p>This is a paragraph element that contains text.</p>
+        <!-- The <b> tag makes the text bold -->
+        <p>This is <b>bold</b> text.</p>
+        <!-- The <i> tag makes the text italic -->
+        <p>This is <i>italic</i> text.</p>
+        <!-- The <u> tag underlines the text -->
+        <p>This is <u>underlined</u> text.</p>
+        <!-- The <br> tag inserts a line break -->
+        <p>This is a line.<br>This is the next line.</p>
+        <!-- The <a> tag creates a hyperlink -->
+        <p>Visit <a href="https://www.example.com" target="_blank">Example Website</a>.</p>
+    </section>
+
+    <section id="section2">
+        <h2>Section 2: Lists and Media</h2>
+        <!-- The <ul> tag defines an unordered (bullet point) list -->
+        <h3>Unordered List</h3>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <!-- The <ol> tag defines an ordered (numbered) list -->
+        <h3>Ordered List</h3>
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ol>
+
+        <!-- The <img> tag embeds an image in the document -->
+        <h3>Image Example</h3>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <!-- The <img> tag uses the "src" attribute to specify the image source and the "alt" attribute for alternative text -->
+
+        <!-- The <figure> tag specifies self-contained content like images or diagrams, often used with <figcaption> -->
+        <figure>
+            <img src="https://via.placeholder.com/200" alt="Another Image">
+            <figcaption>An example image with a caption</figcaption>
+        </figure>
+
+        <!-- The <video> tag embeds a video -->
+        <h3>Video Example</h3>
+        <video width="320" height="240" controls>
+            <source src="movie.mp4" type="video/mp4">
+            <!-- The <source> tag inside <video> specifies multiple media resources -->
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- The <footer> tag represents the footer section -->
+    <footer>
+        <p>&copy; 2024 Web Development Basics</p>
+    </footer>
+</body>
+</html>

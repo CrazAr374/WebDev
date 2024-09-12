@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information about the page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Tags</title>
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <main> is used to indicate the dominant content of the body -->
+    <main>
+        <header>
+            <!-- <header> for introductory content or navigational links -->
+            <h1>Advanced HTML Tags and Their Uses</h1>
+            <p>This page covers advanced HTML5 tags, including new semantic elements and media features.</p>
+        </header>
+
+        <!-- <section> defines sections within the document -->
+        <section id="semantic-elements">
+            <h2>Semantic Elements</h2>
+
+            <!-- <article> defines independent, self-contained content -->
+            <article>
+                <h3>Article Example</h3>
+                <p>This is an example of the <code>&lt;article&gt;</code> element. It's useful for blog posts, news articles, or independent pieces of content.</p>
+            </article>
+
+            <!-- <section> groups related content together -->
+            <section>
+                <h3>Nested Section</h3>
+                <p>The <code>&lt;section&gt;</code> tag groups related content together, typically with its own heading.</p>
+            </section>
+
+            <!-- <figure> specifies self-contained content like images with captions -->
+            <figure>
+                <!-- <img> embeds an image -->
+                <img src="image.jpg" alt="Sample image description">
+                <!-- <figcaption> provides a caption for the figure element -->
+                <figcaption>Sample image description using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code>.</figcaption>
+            </figure>
+        </section>
+
+        <section id="media">
+            <h2>New Media Elements</h2>
+
+            <!-- <picture> allows for multiple sources of images -->
+            <h3>Picture Element</h3>
+            <picture>
+                <!-- <source> is used to specify multiple media resources for different screen sizes -->
+                <source media="(max-width: 600px)" srcset="small-image.jpg">
+                <source media="(max-width: 1200px)" srcset="medium-image.jpg">
+                <!-- <img> is the fallback image if no other source matches -->
+                <img src="large-image.jpg" alt="A large, beautiful landscape">
+            </picture>
+
+            <!-- <video> embeds a video with playback controls -->
+            <h3>Video Example</h3>
+            <video controls width="500">
+                <source src="video-file.mp4" type="video/mp4">
+                <source src="video-file.webm" type="video/webm">
+                <!-- Fallback content if the video cannot be played -->
+                Your browser does not support the video element.
+            </video>
+
+            <!-- <canvas> is used to draw graphics on the fly via JavaScript -->
+            <h3>Canvas Element</h3>
+            <canvas id="myCanvas" width="300" height="200" style="border:1px solid black;">
+                <!-- Fallback text for older browsers -->
+                Your browser does not support the canvas element.
+            </canvas>
+        </section>
+
+        <section id="interactive-content">
+            <h2>Interactive Content</h2>
+
+            <!-- <datalist> provides an autocomplete feature for input fields -->
+            <label for="colors">Choose a color:</label>
+            <input list="colors" id="colorInput" name="colors">
+            <!-- <datalist> defines a list of pre-defined options for an <input> -->
+            <datalist id="colors">
+                <option value="Red">
+                <option value="Green">
+                <option value="Blue">
+            </datalist>
+
+            <!-- <progress> displays a progress bar -->
+            <h3>Progress Element</h3>
+            <progress value="70" max="100">70%</progress>
+
+            <!-- <meter> represents a scalar measurement within a known range -->
+            <h3>Meter Element</h3>
+            <meter value="0.7" min="0" max="1">70%</meter>
+
+            <!-- <output> displays the result of a calculation or script -->
+            <h3>Output Element</h3>
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                <input type="range" id="a" value="50"> +
+                <input type="number" id="b" value="20"> =
+                <output name="result" for="a b">70</output>
+            </form>
+        </section>
+
+        <section id="complex-forms">
+            <h2>Advanced Forms</h2>
+
+            <!-- <fieldset> is used to group related elements in a form -->
+            <form>
+                <fieldset>
+                    <legend>Sign-Up Form</legend>
+
+                    <!-- <input type="email"> creates a field for email input -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <!-- <input type="tel"> creates a field for telephone number input -->
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone"><br>
+
+                    <!-- <input type="range"> creates a slider control -->
+                    <label for="experience">Experience Level:</label>
+                    <input type="range" id="experience" name="experience" min="0" max="10" step="1" value="5"><br>
+
+                    <!-- <input type="datetime-local"> selects both date and time -->
+                    <label for="meeting">Schedule a Meeting:</label>
+                    <input type="datetime-local" id="meeting" name="meeting"><br>
+
+                    <!-- <input type="color"> creates a color picker -->
+                    <label for="color">Favorite Color:</label>
+                    <input type="color" id="color" name="color"><br>
+
+                    <!-- <input type="file"> allows users to select a file -->
+                    <label for="resume">Upload your resume:</label>
+                    <input type="file" id="resume" name="resume"><br>
+
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="web-components">
+            <h2>Web Components</h2>
+
+            <!-- <template> is used to store HTML fragments to be cloned and inserted later -->
+            <template id="greetingTemplate">
+                <p>Hello, <strong>World!</strong></p>
+            </template>
+
+            <!-- <slot> is used in web components to indicate where content should be placed -->
+            <div id="custom-element">
+                <!-- Custom content will be placed here in the slot -->
+                <slot name="myContent">Default content if no slot is provided</slot>
+            </div>
+        </section>
+
+        <footer>
+            <!-- <footer> defines the footer of the page or section -->
+            <p>&copy; 2024 Advanced HTML Tags</p>
+        </footer>
+    </main>
+
+    <!-- Inline script for interactive elements -->
+    <script>
+        // JavaScript to interact with the canvas
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(10, 10, 150, 100);
+    </script>
+</body>
+</html>
