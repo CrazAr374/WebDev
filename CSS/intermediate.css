@@ -1,0 +1,127 @@
+/* Intermediate CSS concepts */
+
+/* Styling an unordered list with no bullets and inline items */
+ul.navbar {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+    display: flex; /* Align items horizontally */
+    justify-content: space-around; /* Space out items evenly */
+    background-color: #333; /* Dark background for the navbar */
+}
+
+/* Styling the navbar links */
+ul.navbar li a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Change background color on hover using pseudo-class */
+ul.navbar li a:hover {
+    background-color: #575757; /* Darker background on hover */
+}
+
+/* Use of advanced selector: Targeting a specific child element */
+.container > p:first-child {
+    font-weight: bold; /* Bold the first paragraph inside a container */
+}
+
+/* Absolute positioning */
+.absolute-box {
+    position: absolute;
+    top: 50px; /* 50px from the top */
+    left: 50px; /* 50px from the left */
+    background-color: #f4f4f4; /* Light background */
+    padding: 20px; /* Internal padding */
+    border: 1px solid #ddd; /* Light border */
+}
+
+/* Relative positioning */
+.relative-box {
+    position: relative;
+    top: 10px; /* Moves the box 10px down from its original position */
+    left: 10px; /* Moves the box 10px to the right */
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Fixed positioning */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Full width header */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* CSS Transitions */
+.button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.4s ease; /* Smooth transitions */
+}
+
+/* On hover, change color and scale the button */
+.button:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.1); /* Slightly increase button size */
+}
+
+/* CSS Transformations */
+.transform-box {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    margin: 20px auto;
+    transition: transform 0.3s ease; /* Smooth transformation */
+}
+
+/* Rotate the box 45 degrees on hover */
+.transform-box:hover {
+    transform: rotate(45deg);
+}
+
+/* Responsive design with media query */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Adjust padding on smaller screens */
+    }
+
+    .fixed-header {
+        font-size: 14px; /* Smaller font size for fixed header */
+    }
+
+    ul.navbar {
+        flex-direction: column; /* Stack navbar items vertically on small screens */
+    }
+}
+
+/* Advanced Selectors */
+/* Select the second list item */
+ul li:nth-child(2) {
+    color: #ff5722; /* Different color for the second item */
+}
+
+/* Selecting all paragraphs after the first h2 inside the container */
+.container h2 ~ p {
+    font-style: italic; /* Italicize all paragraphs after h2 */
+}
+
+/* Using ::before and ::after pseudo-elements */
+.heading::before {
+    content: ">> "; /* Add text before the heading */
+    color: #4CAF50;
+}
+
+.heading::after {
+    content: " <<"; /* Add text after the heading */
+    color: #4CAF50;
+}

@@ -1,0 +1,135 @@
+/* Advanced CSS concepts */
+
+/* CSS Grid Layout: Creating a responsive grid with defined areas */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows with automatic height */
+    grid-template-areas:
+        "header header header"
+        "main sidebar sidebar"
+        "footer footer footer"; /* Define areas for grid items */
+    gap: 20px; /* Space between grid items */
+}
+
+/* Styling grid areas */
+.header {
+    grid-area: header;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ddd; /* Light gray background */
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    text-align: center;
+    padding: 20px;
+}
+
+/* CSS Custom Properties (CSS Variables) */
+:root {
+    --main-bg-color: #f4f4f4; /* Default background color */
+    --primary-color: #4CAF50; /* Primary color */
+    --text-color: #333; /* Text color */
+}
+
+/* Using custom properties */
+body {
+    background-color: var(--main-bg-color); /* Use variable for background color */
+    color: var(--text-color); /* Use variable for text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Advanced Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out; /* Slide-in animation */
+}
+
+/* CSS Clip Paths: Creating complex shapes */
+.clip-path-example {
+    width: 200px;
+    height: 200px;
+    background-color: #4CAF50;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond shape */
+}
+
+/* Multi-column Layout */
+.multi-column {
+    column-count: 3; /* Three columns */
+    column-gap: 20px; /* Space between columns */
+}
+
+/* Grid Template Areas for responsive design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
+
+/* Advanced Selectors */
+/* Select all odd items in a list */
+ul.advanced-list li:nth-child(odd) {
+    background-color: #f9f9f9; /* Light background for odd items */
+}
+
+/* Select the first element with a specific class within a container */
+.container .highlight:first-of-type {
+    background-color: #ff5722; /* Highlight color */
+    color: white;
+    padding: 10px;
+}
+
+/* Custom properties for dynamic themes */
+.theme-dark {
+    --main-bg-color: #333;
+    --text-color: #f4f4f4;
+    --primary-color: #4CAF50;
+}
+
+.theme-light {
+    --main-bg-color: #f4f4f4;
+    --text-color: #333;
+    --primary-color: #007BFF;
+}
+
+/* Applying dynamic themes */
+.theme-dark body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+.theme-light body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
